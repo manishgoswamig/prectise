@@ -11,7 +11,7 @@ class InstallSchema implements InstallSchemaInterface
 
     protected $eavSetupFactory;
 
-    public function __construct(EavSetupFactory $eavSetupFactory)
+    public function __construct(\Magento\Eav\Setup\EavSetupFactory $eavSetupFactory)
     {
         $this->eavSetupFactory = $eavSetupFactory;
     }

@@ -7,6 +7,9 @@ class Index extends Action
 {
     /** @var  \Magento\Framework\View\Result\Page */
     protected $resultPageFactory;
+
+    protected $fruits;
+
     /**
      *
      * Dependency Injection.
@@ -16,9 +19,12 @@ class Index extends Action
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+        \Magento\Framework\View\Result\PageFactory $resultPageFactory,
+        array $fruits = []
     ) {
         $this->resultPageFactory = $resultPageFactory;
+        $this->fruits = $fruits;
+        /*$this->helper = $ktplHelper;*/
         parent::__construct($context);
     }
 
@@ -29,6 +35,9 @@ class Index extends Action
      */
     public function execute()
     {
+        echo '<pre/>'; print_r($this->fruits); 
+
+        die('te');
         return $this->resultPageFactory->create();
     }
 }
