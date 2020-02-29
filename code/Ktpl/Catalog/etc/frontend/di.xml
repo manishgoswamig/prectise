@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- <type name="Ktpl\Catalog\Controller\Normal\Test\Method\Index">
+        <arguments>
+            <argument name="someClassInjectedIntoConstructor" xsi:type="object">Ktpl\Catalog\Helper\Data</argument>
+        </arguments>
+    </type> -->
+    <!-- <type name="Ktpl\Catalog\Block\Element\Cataloglink">
+        <plugin name="ktpl_before_plugin" type="Ktpl\Catalog\Plugin\Element\Cataloglink" sortOrder="6" />
+    </type> -->
+
+    <type name="Magento\Framework\App\Action\Action">
+<!--         <plugin name="ktpl_before_plugin" type="Ktpl\Catalog\Plugin\Element\CataloglinkBefore" sortOrder="7" /> -->
+        <plugin name="vendor_module_plugina" type="Ktpl\Catalog\Plugin\PluginA" sortOrder="10" />
+        <plugin name="vendor_module_pluginb" type="Ktpl\Catalog\Plugin\PluginB" sortOrder="20" />
+        <plugin name="vendor_module_pluginc" type="Ktpl\Catalog\Plugin\PluginC" sortOrder="30" />
+    </type>
+
+    <!-- <type name="Magento\Customer\CustomerData\SectionPoolInterface">
+        <arguments>
+            <argument name="sectionSourceMap" xsi:type="array">
+                <item name="customsection" xsi:type="string">Ktpl\Catalog\CustomerData\CustomSection</item>
+            </argument>
+        </arguments>
+    </type> -->
+
+
+    <!--
+        Note :- 01
+        If plugin will be created with same class then last plugin type will be in action before of that same class of plugin will be ignored.
+
+        Note :- 02
+
+    -->
+
+</config>

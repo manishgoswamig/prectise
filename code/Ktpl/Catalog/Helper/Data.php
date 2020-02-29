@@ -8,7 +8,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
 	 public function __construct(Context $context)
     {
-        echo '<pre/>'; die('helper is calling herer....');
+        parent::__construct($context);
     }
 
     /**

@@ -35,9 +35,6 @@ class Index extends Action
      */
     public function execute()
     {
-        echo '<pre/>'; print_r($this->fruits); 
-
-        die('te');
         return $this->resultPageFactory->create();
     }
 }
